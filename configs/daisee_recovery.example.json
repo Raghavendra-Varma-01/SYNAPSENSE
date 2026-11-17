@@ -1,0 +1,13 @@
+{
+  "project_root": ".",
+  "dataset_root": "PATH/TO/DAiSEE",
+  "report_dir": "reports/dataset_recovery",
+  "archive_search_roots": [
+    "PATH/TO/ARCHIVES"
+  ],
+  "archive_search_exclude_roots": [
+    "PATH/TO/DAiSEE"
+  ],
+  "archive_search_max_depth": 4,
+  "original_archive_filename": "DAiSEE.zip"
+}

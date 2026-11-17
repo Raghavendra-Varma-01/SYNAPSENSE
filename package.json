@@ -1,0 +1,9 @@
+{
+  "name": "synapsense-static-frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-frontend.mjs",
+    "test": "node --test tests/frontend-build.test.mjs"
+  }
+}

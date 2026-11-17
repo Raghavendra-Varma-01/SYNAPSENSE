@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081426">
+  <meta name="description" content="SYNAPSENSE — behavioural intelligence from visual cues.">
+  <link rel="icon" type="image/png" href="/assets/synapsense-emblem.png">
+  <title>SYNAPSENSE · NEUROCORE</title>
+  <link rel="stylesheet" href="/styles.css?v=20261117-2">
+  <script src="/runtime-config.js" defer></script>
+  <script src="/app.js?v=20261117-2" defer></script>
+</head>
+<body>
+  <canvas id="neural-bg" aria-hidden="true"></canvas>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="SYNAPSENSE home">
+        <span class="brand-emblem" aria-hidden="true"><img src="/assets/synapsense-emblem.png" alt=""></span>
+        <span class="brand-word"><strong>SYNAPSENSE</strong><small>BEHAVIOURAL INTELLIGENCE<br>FROM VISUAL CUES</small></span>
+      </a>
+      <div class="product-tag">NEUROCORE <span>RESEARCH</span></div>
+      <div class="nav-label">WORKSPACE</div>
+      <nav aria-label="Main navigation">
+        <a class="nav-link active" href="#dashboard" data-page="Dashboard"><span>⌂</span>Dashboard</a>
+        <a class="nav-link" href="#live" data-page="Live Analysis"><span>◉</span>Live Analysis</a>
+        <a class="nav-link" href="#neuromap" data-page="NEUROMAP"><span>⌘</span>NEUROMAP</a>
+        <a class="nav-link" href="#temporal" data-page="Temporal Analysis"><span>⌁</span>Temporal Analysis</a>
+        <a class="nav-link" href="#reports" data-page="Research Reports"><span>▤</span>Research Reports</a>
+        <a class="nav-link" href="#model" data-page="Model Information"><span>▧</span>Model Information</a>
+      </nav>
+      <div class="sidebar-bottom"><div class="local-badge"><i></i><span>LIVE INFERENCE</span></div><p>Camera frames are sent to the configured inference server for live predictions and processed in memory. No recording or persistent frame storage is implemented. End the session to stop sending frames.</p><button class="quiet-button" id="privacy-info">Privacy details <span>↗</span></button></div>
+    </aside>
+
+    <main class="main-content" id="dashboard">
+      <header class="topbar">
+        <button class="icon-button menu-toggle" id="menu-toggle" aria-label="Open navigation">☰</button>
+        <div class="page-heading"><div class="eyebrow">BEHAVIOURAL INTELLIGENCE PLATFORM</div><h1 id="page-title">Research dashboard</h1></div>
+        <div class="header-status"><span class="connection-dot" id="connection-dot"></span><span id="connection-text">Checking inference service…</span></div>
+        <div class="header-pill privacy-pill"><span class="shield">◇</span><span><b>Session privacy</b><small>Frames sent to inference server</small></span></div>
+        <div class="header-pill session-pill"><span class="live-dot" id="session-dot"></span><span><b id="session-status">Session idle</b><small id="session-timer">00:00</small></span></div>
+      </header>
+
+      <section class="welcome-row" id="welcome">
+        <div><div class="eyebrow">SYNAPSENSE / NEUROCORE</div><h2>Observe behaviour.<br><em>Understand patterns.</em></h2><p>Explore visual behavioural signals with a research-first, scientifically responsible toolkit.</p></div>
+        <div class="welcome-note"><span class="note-icon">i</span><span>DAiSEE predictions describe visual cues. They are not clinical assessments or measurements of brain activity.</span></div>
+      </section>
+
+      <section class="workspace-grid" id="live">
+        <article class="card camera-card">
+          <div class="card-head"><div><div class="eyebrow">SESSION INPUT</div><h2>Live analysis <span class="subdued">· webcam</span></h2></div><span class="camera-state" id="camera-state"><i></i> CAMERA OFF</span></div>
+          <div class="video-wrap"><video id="camera" autoplay playsinline muted></video><canvas id="landmarks" aria-hidden="true"></canvas><div class="camera-empty" id="camera-empty"><div class="camera-orbit"><span>◉</span></div><strong>Camera preview is off</strong><small>Frames are sent to the configured inference server</small></div><div class="live-label" id="live-label"><span class="live-dot"></span> LIVE</div><div class="face-label" id="face-label"><span></span>Waiting for camera</div></div>
+          <div class="camera-actions"><button class="button primary" id="camera-toggle"><span>▶</span> Start camera</button><button class="button secondary" id="end-session" disabled>End session</button><span class="camera-hint" id="camera-hint">16 frames required before first prediction</span></div>
+          <div class="backend-help" id="backend-help" role="status" hidden><span id="backend-message">Inference is unavailable. Check the configured backend.</span><code id="backend-command">.\.venv\Scripts\python.exe src\inference\live_server.py</code></div>
+          <div class="prediction-block"><div class="section-title">DAiSEE behavioural predictions <span class="info-mark" title="Ordinal classes from the existing model">i</span></div><div id="prediction-list" class="prediction-list"></div><div class="prediction-foot"><span id="prediction-updated">No prediction in this session</span><span>Ordinal classes · 0–3</span></div></div>
+        </article>
+
+        <article class="card brain-card" id="neuromap">
+          <div class="card-head brain-head"><div><div class="eyebrow">EDUCATIONAL NEUROSCIENCE MAPPING</div><h2>NEUROMAP <span class="concept-chip">CONCEPTUAL</span></h2><p>Related functional networks · not neural activity</p></div><button class="icon-button" id="brain-reset" title="Reset view" aria-label="Reset brain view">⟳</button></div>
+          <div class="filters" role="group" aria-label="Behaviour filter"><button class="filter active" data-filter="combined">Combined</button><button class="filter" data-filter="Boredom">Boredom</button><button class="filter" data-filter="Engagement">Engagement</button><button class="filter" data-filter="Confusion">Confusion</button><button class="filter" data-filter="Frustration">Frustration</button></div>
+          <div class="brain-stage"><svg class="brain-visual" id="brain-visual" viewBox="0 0 720 430" role="img" aria-label="Conceptual side view of a brain with selectable functional network regions">
+            <defs><radialGradient id="brainFill"><stop stop-color="#5276a9" stop-opacity=".42"/><stop offset="1" stop-color="#182844" stop-opacity=".84"/></radialGradient><linearGradient id="regionFill"><stop stop-color="#24cce7" stop-opacity=".26"/><stop offset="1" stop-color="#9a63f1" stop-opacity=".34"/></linearGradient><filter id="softglow"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <ellipse cx="363" cy="355" rx="255" ry="27" fill="#25d7ee" opacity=".08"/><ellipse cx="363" cy="355" rx="195" ry="16" fill="none" stroke="#2ddaf1" stroke-opacity=".35"/>
+            <path class="brain-outline" d="M160 246c-22-16-22-48-2-65-10-27 6-49 28-54 2-29 25-45 51-38 11-27 42-35 66-20 22-27 60-26 78-1 30-22 71-8 77 25 28-3 50 22 43 48 27 13 34 46 13 67 19 23 11 51-13 63-4 30-37 42-61 24-18 27-57 29-77 5-24 24-64 20-80-8-29 14-66-2-66-34-29-4-43-30-31-52-22-10-33-32-26-55z" fill="url(#brainFill)" stroke="#74d9f2" stroke-width="3"/>
+            <path d="M368 73c-12 43 8 60-3 95-9 28 14 44 2 76-9 25 7 49 1 88" fill="none" stroke="#8fb2d1" stroke-opacity=".55" stroke-width="2"/>
+            <g class="brain-folds" fill="none" stroke="#8aaed4" stroke-opacity=".42" stroke-width="3" stroke-linecap="round"><path d="M206 147c16-18 40-15 50 4s-6 35-23 35-27 17-14 30 32 8 36-10"/><path d="M278 95c-17 13-16 31 1 39s32-3 30-19-21-20-29-5"/><path d="M303 159c-24-8-42 8-37 29s29 26 44 12 27-5 27 10-17 24-34 16"/><path d="M198 224c12-11 30-7 31 9s-20 23-17 40 23 21 35 8"/><path d="M326 83c-10 19-4 38 12 42s29-9 24-26-22-18-26-1"/><path d="M397 105c13-18 40-16 48 4s-5 34-23 34-29 17-14 31 34 6 39-11"/><path d="M430 182c-19-11-39 1-38 21s21 29 39 18 31 0 27 16-24 19-37 11"/><path d="M410 273c-14-19-39-17-46 3s8 33 25 31 30 14 18 28"/><path d="M268 278c11-16 34-16 42 0s-4 32-21 31-25 12-16 23"/></g>
+            <g class="network-regions"><g class="region" data-region="Prefrontal cortex" tabindex="0" role="button"><ellipse cx="263" cy="155" rx="50" ry="36" fill="url(#regionFill)"/><circle cx="263" cy="155" r="7"/></g><g class="region" data-region="Parietal cortex" tabindex="0" role="button"><ellipse cx="417" cy="160" rx="46" ry="34" fill="url(#regionFill)"/><circle cx="417" cy="160" r="7"/></g><g class="region" data-region="Anterior cingulate" tabindex="0" role="button"><ellipse cx="357" cy="218" rx="37" ry="24" fill="url(#regionFill)"/><circle cx="357" cy="218" r="7"/></g><g class="region" data-region="Insula" tabindex="0" role="button"><ellipse cx="320" cy="244" rx="28" ry="21" fill="url(#regionFill)"/><circle cx="320" cy="244" r="7"/></g><g class="region" data-region="Amygdala" tabindex="0" role="button"><ellipse cx="396" cy="250" rx="24" ry="18" fill="url(#regionFill)"/><circle cx="396" cy="250" r="7"/></g><g class="region" data-region="Hippocampus" tabindex="0" role="button"><ellipse cx="430" cy="282" rx="32" ry="18" fill="url(#regionFill)"/><circle cx="430" cy="282" r="7"/></g></g>
+            <text x="57" y="111" class="brain-label">FRONTOPARIETAL</text><path d="M165 115l47 25" class="leader"/><text x="499" y="112" class="brain-label">ATTENTION</text><path d="M495 117l-37 26" class="leader"/><text x="52" y="308" class="brain-label">SALience · INTEROCEPTION</text><path d="M233 289l61-34" class="leader"/><text x="502" y="319" class="brain-label">AFFECTIVE REGULATION</text><path d="M500 310l-51-24" class="leader"/>
+          </svg><div class="region-card" id="region-card"><button class="region-close" id="region-close" aria-label="Close region details">×</button><div class="eyebrow">SELECTED NETWORK</div><h3 id="region-name">Explore a region</h3><p id="region-description">Select a highlighted area to view its educational association.</p><div class="region-meta" id="region-meta">No neural activity is measured.</div></div><div class="brain-legend"><span><i class="cyan"></i>Network association</span><span><i class="violet"></i>Conceptual mapping</span></div></div>
+          <div class="brain-bottom"><span>Associations overlap across behaviours and are educational only.</span><button class="text-button" id="show-networks">Network guide <span>↗</span></button></div>
+        </article>
+      </section>
+
+      <section class="lower-grid">
+        <article class="card metrics-card"><div class="card-head"><div><div class="eyebrow">GEOMETRIC PROXIES</div><h2>Facial behaviour metrics</h2></div><span class="info-mark" title="Geometric features only; not diagnostic">i</span></div><div class="metrics" id="metrics"><div class="metrics-empty">Metrics appear when a face is detected.<br><small>Geometric proxies are not diagnostic.</small></div></div></article>
+        <article class="card chart-card" id="temporal"><div class="card-head"><div><div class="eyebrow">SESSION HISTORY</div><h2>Temporal analysis</h2></div><select id="range-select" aria-label="Select history range"><option value="all">Entire session</option><option value="10">Last 10 predictions</option><option value="30">Last 30 predictions</option></select></div><div class="chart-wrap"><canvas id="history-chart" aria-label="Actual prediction history chart"></canvas><div class="chart-empty" id="chart-empty"><span class="chart-icon">⌁</span><strong>Predictions will appear here</strong><small>Start a session to build a real timeline.</small></div></div><div class="chart-legend" id="chart-legend"></div></article>
+        <article class="card timeline-card"><div class="card-head"><div><div class="eyebrow">SESSION PLAYBACK</div><h2>Prediction timeline</h2></div><span class="timeline-count" id="timeline-count">0 points</span></div><div class="timeline-track" id="timeline-track" role="slider" aria-label="Select a historical prediction" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0" tabindex="0"><div class="timeline-progress" id="timeline-progress"></div><div class="timeline-empty" id="timeline-empty">Session history appears here</div></div><div class="timeline-time"><span id="timeline-start">—</span><span id="timeline-current">No selection</span><span id="timeline-end">—</span></div><div class="level-legend"><span><i style="background:#7c899a"></i>0 Inactive</span><span><i style="background:#fa6c80"></i>1 Low</span><span><i style="background:#f1ce57"></i>2 Moderate</span><span><i style="background:#39dda1"></i>3 High</span></div><div class="playback"><button id="previous-point" aria-label="Previous prediction">◀</button><button class="play-button" id="playback-toggle" aria-label="Play predictions">▶</button><button id="next-point" aria-label="Next prediction">▶</button><select id="playback-speed" aria-label="Playback speed"><option value="1500">1×</option><option value="750">2×</option></select></div></article>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="card model-card" id="model"><div class="model-icon">⌘</div><div><div class="eyebrow">CHAMPION MODEL</div><strong>Temporal Attention BiLSTM</strong><p>MobileNetV3-Small · 16 frames · 576 features</p></div><div class="model-score"><span>Validation Macro-F1</span><strong>0.2982</strong></div><button class="text-button" id="model-details">Model details ↗</button></article>
+        <article class="card report-card" id="reports"><div><div class="eyebrow">RESEARCH NOTES</div><strong>Session data stays in memory</strong><p>Download a session summary when your analysis is complete.</p></div><button class="button secondary" id="export-report" disabled>↓ Export session</button></article>
+      </section>
+      <footer><span>SYNAPSENSE <i>·</i> NEUROCORE</span><span>Research support only · not a clinical tool</span><button class="text-button" id="about-model">Model limitations</button></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

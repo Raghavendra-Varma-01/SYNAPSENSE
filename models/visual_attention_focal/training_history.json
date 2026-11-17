@@ -1,0 +1,134 @@
+[
+    {
+        "epoch": 1,
+        "train_loss": 0.25753132023272063,
+        "validation_macro_f1": 0.26489070775586393,
+        "task_macro_f1": {
+            "Boredom": 0.3053132896486474,
+            "Engagement": 0.27894911302887554,
+            "Confusion": 0.2593702474220711,
+            "Frustration": 0.21593018092386168
+        },
+        "learning_rate": 0.001
+    },
+    {
+        "epoch": 2,
+        "train_loss": 0.2278858566922801,
+        "validation_macro_f1": 0.2689092387972346,
+        "task_macro_f1": {
+            "Boredom": 0.2908086403396619,
+            "Engagement": 0.271505376344086,
+            "Confusion": 0.25862306617793573,
+            "Frustration": 0.2546998723272549
+        },
+        "learning_rate": 0.001
+    },
+    {
+        "epoch": 3,
+        "train_loss": 0.2161872149223373,
+        "validation_macro_f1": 0.2755628511631655,
+        "task_macro_f1": {
+            "Boredom": 0.2997809010741431,
+            "Engagement": 0.28158674745349926,
+            "Confusion": 0.28112985810563484,
+            "Frustration": 0.23975389801938474
+        },
+        "learning_rate": 0.001
+    },
+    {
+        "epoch": 4,
+        "train_loss": 0.20832354770529837,
+        "validation_macro_f1": 0.27989158253005464,
+        "task_macro_f1": {
+            "Boredom": 0.2815840278332563,
+            "Engagement": 0.2641652003347015,
+            "Confusion": 0.30479367804236046,
+            "Frustration": 0.2690234239099003
+        },
+        "learning_rate": 0.001
+    },
+    {
+        "epoch": 5,
+        "train_loss": 0.20333938176433244,
+        "validation_macro_f1": 0.288998251866042,
+        "task_macro_f1": {
+            "Boredom": 0.30886805587440175,
+            "Engagement": 0.2826676626880092,
+            "Confusion": 0.29716054397619557,
+            "Frustration": 0.2672967449255613
+        },
+        "learning_rate": 0.001
+    },
+    {
+        "epoch": 6,
+        "train_loss": 0.19678319706803277,
+        "validation_macro_f1": 0.26957976454803595,
+        "task_macro_f1": {
+            "Boredom": 0.3033635582747249,
+            "Engagement": 0.2727604811718774,
+            "Confusion": 0.2717529672818424,
+            "Frustration": 0.23044205146369917
+        },
+        "learning_rate": 0.001
+    },
+    {
+        "epoch": 7,
+        "train_loss": 0.19011159684686435,
+        "validation_macro_f1": 0.2873037072535481,
+        "task_macro_f1": {
+            "Boredom": 0.3070640473364659,
+            "Engagement": 0.2790114592140098,
+            "Confusion": 0.3189044142836991,
+            "Frustration": 0.2442349081800175
+        },
+        "learning_rate": 0.001
+    },
+    {
+        "epoch": 8,
+        "train_loss": 0.18612540513277054,
+        "validation_macro_f1": 0.26233391495448494,
+        "task_macro_f1": {
+            "Boredom": 0.2524634312719278,
+            "Engagement": 0.25939646401005334,
+            "Confusion": 0.2925416124750222,
+            "Frustration": 0.24493415206093655
+        },
+        "learning_rate": 0.0005
+    },
+    {
+        "epoch": 9,
+        "train_loss": 0.17322557880764916,
+        "validation_macro_f1": 0.2755487860732222,
+        "task_macro_f1": {
+            "Boredom": 0.29047693031314453,
+            "Engagement": 0.2777429475293056,
+            "Confusion": 0.2928671186422016,
+            "Frustration": 0.24110814780823717
+        },
+        "learning_rate": 0.0005
+    },
+    {
+        "epoch": 10,
+        "train_loss": 0.1637387540900991,
+        "validation_macro_f1": 0.27225530779850227,
+        "task_macro_f1": {
+            "Boredom": 0.27011239637110995,
+            "Engagement": 0.2794870430467994,
+            "Confusion": 0.28690183057554247,
+            "Frustration": 0.25251996120055725
+        },
+        "learning_rate": 0.0005
+    },
+    {
+        "epoch": 11,
+        "train_loss": 0.15866197823058992,
+        "validation_macro_f1": 0.2772500518095367,
+        "task_macro_f1": {
+            "Boredom": 0.2809245541720551,
+            "Engagement": 0.2779882390157868,
+            "Confusion": 0.2956794852879134,
+            "Frustration": 0.25440792876239143
+        },
+        "learning_rate": 0.00025
+    }
+]

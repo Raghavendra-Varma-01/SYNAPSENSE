@@ -1,0 +1,112 @@
+[
+    {
+        "epoch": 1,
+        "validation_macro_f1": 0.2849069477870245,
+        "task_macro_f1": {
+            "Boredom": 0.2504615055092601,
+            "Engagement": 0.30306758399134226,
+            "Confusion": 0.29739917736090365,
+            "Frustration": 0.2886995242865919
+        }
+    },
+    {
+        "epoch": 2,
+        "validation_macro_f1": 0.2893557572128837,
+        "task_macro_f1": {
+            "Boredom": 0.27748885844447435,
+            "Engagement": 0.30001360436241625,
+            "Confusion": 0.3134477643568553,
+            "Frustration": 0.266472801687789
+        }
+    },
+    {
+        "epoch": 3,
+        "validation_macro_f1": 0.2820228522799303,
+        "task_macro_f1": {
+            "Boredom": 0.2811551874046679,
+            "Engagement": 0.275547698839128,
+            "Confusion": 0.30553053217006443,
+            "Frustration": 0.2658579907058609
+        }
+    },
+    {
+        "epoch": 4,
+        "validation_macro_f1": 0.2849763627454046,
+        "task_macro_f1": {
+            "Boredom": 0.3024254893270432,
+            "Engagement": 0.2767983050659445,
+            "Confusion": 0.31189941764969387,
+            "Frustration": 0.2487822389389368
+        }
+    },
+    {
+        "epoch": 5,
+        "validation_macro_f1": 0.29514635877764567,
+        "task_macro_f1": {
+            "Boredom": 0.335161795381048,
+            "Engagement": 0.26988534695594313,
+            "Confusion": 0.3002163069048178,
+            "Frustration": 0.2753219858687736
+        }
+    },
+    {
+        "epoch": 6,
+        "validation_macro_f1": 0.28026351940902544,
+        "task_macro_f1": {
+            "Boredom": 0.28333335978585095,
+            "Engagement": 0.26091853077924687,
+            "Confusion": 0.3087869303388281,
+            "Frustration": 0.26801525673217585
+        }
+    },
+    {
+        "epoch": 7,
+        "validation_macro_f1": 0.28361921939389473,
+        "task_macro_f1": {
+            "Boredom": 0.3122863864191708,
+            "Engagement": 0.25921367065996886,
+            "Confusion": 0.3019154474409506,
+            "Frustration": 0.26106137305548877
+        }
+    },
+    {
+        "epoch": 8,
+        "validation_macro_f1": 0.26829162948641927,
+        "task_macro_f1": {
+            "Boredom": 0.2539601903127059,
+            "Engagement": 0.28871440505535884,
+            "Confusion": 0.2711232672015238,
+            "Frustration": 0.25936865537608855
+        }
+    },
+    {
+        "epoch": 9,
+        "validation_macro_f1": 0.2806141510441828,
+        "task_macro_f1": {
+            "Boredom": 0.28890155786692195,
+            "Engagement": 0.280876675959001,
+            "Confusion": 0.2915006635155889,
+            "Frustration": 0.2611777068352194
+        }
+    },
+    {
+        "epoch": 10,
+        "validation_macro_f1": 0.2869214643747051,
+        "task_macro_f1": {
+            "Boredom": 0.30781256145447056,
+            "Engagement": 0.2865918314596884,
+            "Confusion": 0.2877929118698148,
+            "Frustration": 0.2654885527148468
+        }
+    },
+    {
+        "epoch": 11,
+        "validation_macro_f1": 0.2890343134228096,
+        "task_macro_f1": {
+            "Boredom": 0.3111743479014196,
+            "Engagement": 0.2830595227975303,
+            "Confusion": 0.29579267953459293,
+            "Frustration": 0.26611070345769555
+        }
+    }
+]

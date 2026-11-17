@@ -1,0 +1,73 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Jupyter local state
+.ipynb_checkpoints/
+
+# Secrets and local credentials
+.env
+.env.*
+!.env.example
+.secrets/
+secrets.*
+credentials.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dataset and generated local data
+/datasets/
+/artifacts/
+/dist/
+/node_modules/
+/logs/
+/tmp/
+/temp/
+
+# Machine-specific files
+.vscode/
+.idea/
+.vs/
+*.suo
+*.user
+*.code-workspace
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local-only dataset recovery configuration and path-bearing reports
+/configs/daisee_recovery.json
+/reports/dataset_recovery/
+
+# Temporary files and logs
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+reports/DATASET_PLAN.md
+models/ordinal_lstm/*.pth
+models/ordinal_lstm/*.npz
+models/visual_attention/*backup*.pth
+models/visual_attention_focal/*.pth
+models/visual_attention_focal/*.npz
+models/visual_attention_sampler/*.pth
+models/visual_attention_sampler/*.npz
+models/visual_focal/*.pth
+models/visual_focal/*.npz
+models/visual_fusion/*.pth
+models/visual_late_fusion/*.pth
+models/visual_lstm/*.pth
+models/visual_lstm/*.npz
